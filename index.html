@@ -21,19 +21,20 @@
 
 <body>
     <h1 class="text-white text-5xl font-semibold  pb-16 text-center pt-16">Zombit Puzzle King</h1>
-    <main class="grid grid-cols-3 h-[600px] w-[450px] border-2 border-white mx-auto">
-        <img id="img-1" class="border" src="assets/1.png" alt="">
-        <img id="img-2" class="border" src="assets/2.png" alt="">
-        <img id="img-3" class="border" src="assets/3.png" alt="">
-        <img id="img-4" class="border" src="assets/4.png" alt="">
-        <img id="img-5" class="border" src="assets/5.png" alt="">
-        <img id="img-6" class="border" src="assets/6.png" alt="">
-        <img id="img-7" class="border" src="assets/7.png" alt="">
-        <img id="img-8" class="border" src="assets/8.png" alt="">
-        <img id="img-9" class="border" src="assets/9.png" alt="">
-        <img id="img-10" class="border" src="assets/10.png" alt="">
-        <img id="img-11" class="border" src="assets/11.png" alt="">
-        <img id="img-12" class="border" src="assets/12.png" alt="">
+    <main class="flex justify-center">
+        <!-- Puzzle Section -->
+        <section id="imgBoard" class="grid grid-cols-3 h-[600px] w-[450px] border-2 border-white mr-10"></section>
+
+        <!-- Main Image -->
+        <section>
+            <div><img src="assets/main.png" class="h-[300px]  border-2 border-white" alt=""></div>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Total Shift : <span id="count"
+                    class="ml-1 text-yellow-200"></span>
+            </h3>
+            <button
+                class="mt-5 text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Reset</button>
+        </section>
+
     </main>
 
 
