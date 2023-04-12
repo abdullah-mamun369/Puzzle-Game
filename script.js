@@ -14,6 +14,12 @@ window.onload = () => {
         img.src = "assets/" + imgOrder[i].toString() + ".png"
 
         // Drag
+        img.addEventListener("dragStart", dragStart)
+        img.addEventListener("dragOver", dragOver)
+        img.addEventListener("dragEnter", dragEnter)
+        img.addEventListener("dragLeave", dragLeave)
+        img.addEventListener("dropDrop", dropDrop)
+        img.addEventListener("dragEnd", dragEnd)
 
         document.getElementById("imgBoard").append(img)
     }
