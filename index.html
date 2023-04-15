@@ -23,7 +23,9 @@
     <h1 class="text-white text-5xl font-semibold  pb-16 text-center pt-16">Zombit Puzzle King</h1>
     <main class="flex justify-center">
         <!-- Puzzle Section -->
-        <section id="imgBoard" class="grid grid-cols-3 h-[600px] w-[450px] border-2 border-white mr-10"></section>
+        <section id="imgBoard" class="h-[600px] w-[450px] border-2 border-white mr-10">
+
+        </section>
 
         <!-- Main Image -->
         <section>
@@ -31,7 +33,9 @@
             <h3 class="mt-5 text-2xl font-semibold text-white">Total Shift : <span id="count"
                     class="ml-1 text-yellow-200"></span>
             </h3>
-            <button
+            <button id="clear"
+                class="mt-5 mr-5 text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Clear</button>
+            <button id="reset" disabled
                 class="mt-5 text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Reset</button>
         </section>
 
@@ -41,6 +45,13 @@
 
     <!-- Script link -->
     <script src="/script.js"></script>
+
+
+    <!-- <script>
+        function attributeSet() {
+            document.getElementById("reset").setAttribute("disabled")
+        }
+    </script> -->
 </body>
 
 </html>
