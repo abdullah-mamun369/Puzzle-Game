@@ -1,4 +1,9 @@
-
+const up = document.getElementById("up")
+const down = document.getElementById("down")
+const right = document.getElementById("right")
+const left = document.getElementById("left")
+const start = document.getElementById("start")
+const keyboard = document.getElementById("keyboard")
 
 // let imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
 let imgOrder = ["3", "9", "1", "7", "11", "6", "4", "8", "2", "10", "5", "0"]
@@ -61,21 +66,21 @@ resetBtn.addEventListener("click", () => {
     const image = document.getElementById("img-1")
     console.log(image);
 
+    start.removeAttribute("class", "hidden")
+    start.setAttribute("class", "text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out mb[-20px]")
+
 })
 
 document.getElementById("clear").addEventListener("click", () => {
     const imageContaimer = document.getElementById("imgContainer")
     resetBtn.removeAttribute("disabled")
     imageContaimer.remove();
+
+    start.setAttribute("class", "hidden")
+    keyboard.setAttribute("class", "hidden")
+
 })
 
-
-const up = document.getElementById("up")
-const down = document.getElementById("down")
-const right = document.getElementById("right")
-const left = document.getElementById("left")
-const start = document.getElementById("start")
-const keyboard = document.getElementById("keyboard")
 
 
 start.addEventListener("click", () => {
