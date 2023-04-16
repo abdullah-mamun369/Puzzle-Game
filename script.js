@@ -57,6 +57,10 @@ resetBtn.addEventListener("click", () => {
     document.getElementById("reset").setAttribute("disabled", "disabled")
 
     console.log(imgOrder);
+
+    const image = document.getElementById("img-1")
+    console.log(image);
+
 })
 
 document.getElementById("clear").addEventListener("click", () => {
@@ -64,6 +68,25 @@ document.getElementById("clear").addEventListener("click", () => {
     resetBtn.removeAttribute("disabled")
     imageContaimer.remove();
 })
+
+
+const up = document.getElementById("up")
+const down = document.getElementById("down")
+const right = document.getElementById("right")
+const left = document.getElementById("left")
+const start = document.getElementById("start")
+const keyboard = document.getElementById("keyboard")
+
+
+start.addEventListener("click", () => {
+    start.setAttribute("class", "hidden")
+    keyboard.removeAttribute("class", "hidden")
+
+
+
+
+})
+
 
 
 

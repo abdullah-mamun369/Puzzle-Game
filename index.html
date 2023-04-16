@@ -33,10 +33,35 @@
             <h3 class="mt-5 text-2xl font-semibold text-white">Total Shift : <span id="count"
                     class="ml-1 text-yellow-200"></span>
             </h3>
-            <button id="clear"
-                class="mt-5 mr-5 text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Clear</button>
-            <button id="reset" disabled
-                class="mt-5 text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Reset</button>
+            <div class="grid gap-3 grid-cols-2 grid-rows-2 mt-5">
+                <button id="clear"
+                    class=" text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Clear</button>
+                <button id="reset" disabled
+                    class="text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out">Reset</button>
+                <button id="start"
+                    class="text-xl text-white hover:bg-red-600 px-5 py-1 border hover:border-red-500 rounded-lg transition duration-300 ease-in-out mb[-20px]">Start</button>
+            </div>
+            <div id="keyboard" class="hidden">
+                <div class="grid grid-cols-3 grid-rows-3 w-[130px]">
+                    <div class="h-[10px] w-[5px]"></div>
+                    <button id="up" class="mb-1">
+                        <i class="fa-solid fa-caret-up text-xl text-white bg-yellow-600 px-[13px] py-2 rounded-lg"></i>
+                    </button>
+                    <div class="h-[20px] w-[5px] mb-3"></div>
+                    <button id="left">
+                        <i
+                            class="fa-solid fa-caret-left text-xl text-white bg-yellow-600 px-[13px] py-2 rounded-lg"></i>
+                    </button>
+                    <button id="down">
+                        <i
+                            class="fa-solid fa-caret-down text-xl text-white bg-yellow-600 px-[13px] py-2 rounded-lg"></i>
+                    </button>
+                    <button id="right">
+                        <i
+                            class="fa-solid fa-caret-right text-xl text-white bg-yellow-600 px-[13px] py-2 rounded-lg"></i>
+                    </button>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -47,11 +72,9 @@
     <script src="/script.js"></script>
 
 
-    <!-- <script>
-        function attributeSet() {
-            document.getElementById("reset").setAttribute("disabled")
-        }
-    </script> -->
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ac2d3397ce.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
