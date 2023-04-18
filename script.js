@@ -5,8 +5,12 @@ const left = document.getElementById("left")
 const keyboard = document.getElementById("keyboard")
 const imageBoard = document.getElementById("imgBoard");
 const whiteImage = document.getElementById("img-9")
+const count = document.getElementById("count")
 
-// let imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+let counter = 0;
+
+let perfectOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let imgOrder = ["3", "9", "1", "7", "6", "4", "8", "5", "2"]
 
 
@@ -65,6 +69,9 @@ resetBtn.addEventListener("click", () => {
     imageBoard.append(div)
 
     console.log(imgOrder);
+
+    counter = 0;
+    count.innerText = counter;
 })
 
 
@@ -102,6 +109,7 @@ function moveImage(direction) {
     let indexOfWhiteImage = imgOrder.indexOf("9");
     if (direction === "up") {
         if (indexOfWhiteImage >= 3 && indexOfWhiteImage < 9) {
+            counter++
 
             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 3]] = [imgOrder[indexOfWhiteImage - 3], imgOrder[indexOfWhiteImage]]
             console.log(imgOrder);
@@ -129,6 +137,8 @@ function moveImage(direction) {
     if (direction === "right") {
         if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 8) {
 
+            counter++
+
             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 1]] = [imgOrder[indexOfWhiteImage + 1], imgOrder[indexOfWhiteImage]]
             console.log(imgOrder);
 
@@ -154,6 +164,9 @@ function moveImage(direction) {
     }
     if (direction === "down") {
         if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 6) {
+
+            counter++
+
             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 3]] = [imgOrder[indexOfWhiteImage + 3], imgOrder[indexOfWhiteImage]]
             console.log(imgOrder);
 
@@ -176,6 +189,9 @@ function moveImage(direction) {
         }
     }
     if (direction === "left") {
+
+        counter++
+
         if (indexOfWhiteImage > 0 && indexOfWhiteImage < 9) {
             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 1]] = [imgOrder[indexOfWhiteImage - 1], imgOrder[indexOfWhiteImage]]
 
@@ -198,6 +214,7 @@ function moveImage(direction) {
             console.log(imgOrder);
         }
     }
+    count.innerText = counter;
 }
 
 // listen for arrow key events
@@ -216,6 +233,7 @@ document.addEventListener("keydown", function (event) {
         moveImage("left");
     }
 });
+
 
 
 
