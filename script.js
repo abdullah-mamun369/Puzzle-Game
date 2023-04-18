@@ -4,9 +4,11 @@ const right = document.getElementById("right")
 const left = document.getElementById("left")
 const keyboard = document.getElementById("keyboard")
 const imageBoard = document.getElementById("imgBoard");
+const whiteImage = document.getElementById("img-9")
 
 // let imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let imgOrder = ["3", "9", "1", "7", "6", "4", "8", "5", "2"]
+
 
 
 const resetBtn = document.getElementById("reset");
@@ -63,10 +65,164 @@ resetBtn.addEventListener("click", () => {
     imageBoard.append(div)
 
     console.log(imgOrder);
-
-    const image = document.getElementById("img-1")
-    console.log(image);
 })
+
+
+
+// function moveImage(direction) {
+//     let indexOfWhiteImage = imgOrder.indexOf("9");
+//     if (direction === "up") {
+//         if (indexOfWhiteImage >= 3 && indexOfWhiteImage < 9) {
+//             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 3]] = [imgOrder[indexOfWhiteImage - 3], imgOrder[indexOfWhiteImage]]
+//             console.log(imgOrder);
+//         }
+//     }
+//     if (direction === "right") {
+//         if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 8) {
+//             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 1]] = [imgOrder[indexOfWhiteImage + 1], imgOrder[indexOfWhiteImage]]
+//             console.log(imgOrder);
+//         }
+//     }
+//     if (direction === "down") {
+//         if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 6) {
+//             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 3]] = [imgOrder[indexOfWhiteImage + 3], imgOrder[indexOfWhiteImage]]
+//             console.log(imgOrder);
+//         }
+//     }
+//     if (direction === "left") {
+//         if (indexOfWhiteImage > 0 && indexOfWhiteImage < 9) {
+//             [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 1]] = [imgOrder[indexOfWhiteImage - 1], imgOrder[indexOfWhiteImage]]
+//             console.log(imgOrder);
+//         }
+//     }
+// }
+
+
+function moveImage(direction) {
+    let indexOfWhiteImage = imgOrder.indexOf("9");
+    if (direction === "up") {
+        if (indexOfWhiteImage >= 3 && indexOfWhiteImage < 9) {
+
+            [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 3]] = [imgOrder[indexOfWhiteImage - 3], imgOrder[indexOfWhiteImage]]
+            console.log(imgOrder);
+
+            let whiteImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage]}`)
+            let replacedImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage - 3]}`)
+
+
+            whiteImage.setAttribute("class", "border")
+            whiteImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage - 3]}`)
+            whiteImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage - 3]}.png`)
+
+
+
+            replacedImage.setAttribute("class", "border")
+            replacedImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage]}`)
+            replacedImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage]}.png`)
+
+            console.log(whiteImage);
+            console.log(replacedImage);
+
+
+        }
+    }
+    if (direction === "right") {
+        if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 8) {
+
+            [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 1]] = [imgOrder[indexOfWhiteImage + 1], imgOrder[indexOfWhiteImage]]
+            console.log(imgOrder);
+
+            let whiteImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage]}`)
+            let replacedImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage + 1]}`)
+
+
+            whiteImage.setAttribute("class", "border")
+            whiteImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage + 1]}`)
+            whiteImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage + 1]}.png`)
+
+
+
+            replacedImage.setAttribute("class", "border")
+            replacedImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage]}`)
+            replacedImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage]}.png`)
+
+
+
+
+
+        }
+    }
+    if (direction === "down") {
+        if (indexOfWhiteImage >= 0 && indexOfWhiteImage < 6) {
+            [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage + 3]] = [imgOrder[indexOfWhiteImage + 3], imgOrder[indexOfWhiteImage]]
+            console.log(imgOrder);
+
+            let whiteImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage]}`)
+            let replacedImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage + 3]}`)
+
+
+            whiteImage.setAttribute("class", "border")
+            whiteImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage + 3]}`)
+            whiteImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage + 3]}.png`)
+
+
+
+            replacedImage.setAttribute("class", "border")
+            replacedImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage]}`)
+            replacedImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage]}.png`)
+
+
+
+        }
+    }
+    if (direction === "left") {
+        if (indexOfWhiteImage > 0 && indexOfWhiteImage < 9) {
+            [imgOrder[indexOfWhiteImage], imgOrder[indexOfWhiteImage - 1]] = [imgOrder[indexOfWhiteImage - 1], imgOrder[indexOfWhiteImage]]
+
+            let whiteImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage]}`)
+            let replacedImage = document.getElementById(`img-${imgOrder[indexOfWhiteImage - 1]}`)
+
+
+            whiteImage.setAttribute("class", "border")
+            whiteImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage - 1]}`)
+            whiteImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage - 1]}.png`)
+
+
+
+            replacedImage.setAttribute("class", "border")
+            replacedImage.setAttribute("id", `img-${imgOrder[indexOfWhiteImage]}`)
+            replacedImage.setAttribute("src", `assets/${imgOrder[indexOfWhiteImage]}.png`)
+
+
+
+            console.log(imgOrder);
+        }
+    }
+}
+
+// listen for arrow key events
+document.addEventListener("keydown", function (event) {
+    // console.log(event);
+    if (event.code === "ArrowUp") {
+        moveImage("up");
+    }
+    if (event.code === "ArrowRight") {
+        moveImage("right");
+    }
+    if (event.code === "ArrowDown") {
+        moveImage("down");
+    }
+    if (event.code === "ArrowLeft") {
+        moveImage("left");
+    }
+});
+
+
+
+
+
+
+
 
 
 
